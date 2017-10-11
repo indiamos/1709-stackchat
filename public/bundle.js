@@ -13355,8 +13355,8 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Message(props) {
-
   var message = props.message;
+
 
   return _react2.default.createElement(
     "li",
@@ -13367,7 +13367,7 @@ function Message(props) {
       _react2.default.createElement(
         "a",
         { href: "#" },
-        _react2.default.createElement("img", { className: "media-object", src: message.author.image, alt: "image" })
+        _react2.default.createElement("img", { className: "media-object", src: message.author.image, alt: "" })
       )
     ),
     _react2.default.createElement(
@@ -13396,6 +13396,10 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _axios = __webpack_require__(113);
+
+var _axios2 = _interopRequireDefault(_axios);
+
 var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
@@ -13407,10 +13411,6 @@ var _Message2 = _interopRequireDefault(_Message);
 var _NewMessageEntry = __webpack_require__(136);
 
 var _NewMessageEntry2 = _interopRequireDefault(_NewMessageEntry);
-
-var _axios = __webpack_require__(113);
-
-var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -13446,8 +13446,8 @@ var MessagesList = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-
-      var channelId = Number(this.props.match.params.channelId); // because it's a string "1", not a number!
+      var channelId = Number(this.props.match.params.channelId);
+      // because it's a string "1", not a number!
       var messages = this.state.messages;
       var filteredMessages = messages.filter(function (message) {
         return message.channelId === channelId;
@@ -13675,8 +13675,6 @@ exports.default = Sidebar;
 "use strict";
 
 
-__webpack_require__(112);
-
 var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
@@ -13689,16 +13687,15 @@ var _reactRouterDom = __webpack_require__(40);
 
 var _components = __webpack_require__(110);
 
+__webpack_require__(112);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom2.default.render(_react2.default.createElement(
   _reactRouterDom.BrowserRouter,
   null,
   _react2.default.createElement(_components.Main, null)
-), document.getElementById('app')); // Whoa?!? What is this?
-// Thanks to the style-loader, sass-loader and css-loader, webpack allows us import scss,
-// compiles it into css, and then auto-magically injects a <style> tag onto the DOM!
-// Wowzers! Check out the webpack.config.js to see how to add them!
+), document.getElementById('app')); /* eslint-env browser */
 
 /***/ }),
 /* 139 */
@@ -14684,7 +14681,7 @@ exports = module.exports = __webpack_require__(142)();
 
 
 // module
-exports.push([module.i, "body {\n  height: 100vh; }\n  body #app {\n    height: 100%; }\n    body #app > div {\n      height: 100%;\n      display: flex; }\n    body #app sidebar {\n      background-color: #2B303B;\n      color: #AFB1B6;\n      z-index: 2; }\n      body #app sidebar .sidebar-header {\n        height: 53px;\n        width: 220px;\n        background-color: #303641;\n        border-bottom: 1px solid gray;\n        color: white; }\n        body #app sidebar .sidebar-header h3 {\n          display: flex;\n          align-items: center;\n          margin: 0;\n          padding: 12px; }\n          body #app sidebar .sidebar-header h3 div {\n            margin-right: 10px; }\n      body #app sidebar h5 {\n        text-transform: uppercase;\n        margin-left: 16px; }\n      body #app sidebar ul {\n        text-transform: lowercase;\n        list-style-type: none;\n        margin: 0;\n        padding: 0; }\n        body #app sidebar ul li {\n          height: 28px;\n          width: 205px; }\n          body #app sidebar ul li a {\n            color: #AFB1B6;\n            padding-left: 16px;\n            padding-top: 3px;\n            display: list-item;\n            height: 100%;\n            width: 100%; }\n            body #app sidebar ul li a:hover, body #app sidebar ul li a:focus {\n              color: #AFB1B6;\n              background-color: #303641;\n              text-decoration: none; }\n            body #app sidebar ul li a.active {\n              background-color: #5294E2;\n              color: #D4D5D8;\n              border-radius: 0 5px 5px 0; }\n            body #app sidebar ul li a span:first-child {\n              margin-right: 10px; }\n    body #app nav {\n      position: fixed;\n      height: 53px;\n      width: 100%;\n      background-color: white;\n      z-index: 1;\n      border-bottom: 1px solid gray;\n      display: flex;\n      align-items: center; }\n      body #app nav h3 {\n        margin: 0 0 0 240px;\n        flex: 1 1 auto; }\n      body #app nav form {\n        margin: 0 10px 0 0; }\n    body #app main {\n      margin: 78px 25px 25px 25px;\n      flex: 1 1 auto;\n      display: flex;\n      flex-direction: column; }\n      body #app main .media-list {\n        overflow-y: scroll;\n        flex: 1 1 auto; }\n      body #app main .media img {\n        height: 64px;\n        width: 64px; }\n      body #app main .media-object {\n        border-radius: 5px; }\n      body #app main > div {\n        display: flex;\n        flex-direction: column;\n        flex: 1 1 auto; }\n      body #app main #new-message-form {\n        position: relative; }\n        body #app main #new-message-form .form-control {\n          border-width: 3px 1.5px 3px 3px; }\n        body #app main #new-message-form .btn {\n          border-width: 3px; }\n", ""]);
+exports.push([module.i, "body {\n  height: 100vh; }\n  body #app {\n    height: 100%; }\n    body #app > div {\n      height: 100%;\n      display: flex; }\n    body #app sidebar {\n      background-color: #2b303b;\n      color: #afb1b6;\n      z-index: 2; }\n      body #app sidebar .sidebar-header {\n        height: 53px;\n        width: 220px;\n        background-color: #303641;\n        border-bottom: 1px solid gray;\n        color: white; }\n        body #app sidebar .sidebar-header h3 {\n          display: flex;\n          align-items: center;\n          margin: 0;\n          padding: 12px; }\n          body #app sidebar .sidebar-header h3 div {\n            margin-right: 10px; }\n      body #app sidebar h5 {\n        text-transform: uppercase;\n        margin-left: 16px; }\n      body #app sidebar ul {\n        text-transform: lowercase;\n        list-style-type: none;\n        margin: 0;\n        padding: 0; }\n        body #app sidebar ul li {\n          height: 28px;\n          width: 205px; }\n          body #app sidebar ul li a {\n            color: #afb1b6;\n            padding-left: 16px;\n            padding-top: 3px;\n            display: list-item;\n            height: 100%;\n            width: 100%; }\n            body #app sidebar ul li a:hover, body #app sidebar ul li a:focus {\n              color: #afb1b6;\n              background-color: #303641;\n              text-decoration: none; }\n            body #app sidebar ul li a.active {\n              background-color: #5294e2;\n              color: #d4d5d8;\n              border-radius: 0 5px 5px 0; }\n            body #app sidebar ul li a span:first-child {\n              margin-right: 10px; }\n    body #app nav {\n      position: fixed;\n      height: 53px;\n      width: 100%;\n      background-color: white;\n      z-index: 1;\n      border-bottom: 1px solid gray;\n      display: flex;\n      align-items: center; }\n      body #app nav h3 {\n        margin: 0 0 0 240px;\n        flex: 1 1 auto; }\n      body #app nav form {\n        margin: 0 10px 0 0; }\n    body #app main {\n      margin: 78px 25px 25px 25px;\n      flex: 1 1 auto;\n      display: flex;\n      flex-direction: column; }\n      body #app main .media-list {\n        overflow-y: scroll;\n        flex: 1 1 auto; }\n      body #app main .media img {\n        height: 64px;\n        width: 64px; }\n      body #app main .media-object {\n        border-radius: 5px; }\n      body #app main > div {\n        display: flex;\n        flex-direction: column;\n        flex: 1 1 auto; }\n      body #app main #new-message-form {\n        position: relative; }\n        body #app main #new-message-form .form-control {\n          border-width: 3px 1.5px 3px 3px; }\n        body #app main #new-message-form .btn {\n          border-width: 3px; }\n", ""]);
 
 // exports
 

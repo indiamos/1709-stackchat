@@ -10,7 +10,7 @@ const LUNCH_CHANNEL = '/channels/4';
 
 export default class ChannelList extends Component {
 
-  render () {
+  render() {
     return (
       <ul>
         <li>

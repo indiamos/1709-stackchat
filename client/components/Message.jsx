@@ -1,14 +1,13 @@
 import React from 'react';
 
-export default function Message (props) {
-
-  const message = props.message;
+export default function Message(props) {
+  const { message } = props;
 
   return (
     <li className="media">
       <div className="media-left">
         <a href="#">
-          <img className="media-object" src={message.author.image} alt="image" />
+          <img className="media-object" src={message.author.image} alt="" />
         </a>
       </div>
       <div className="media-body">
